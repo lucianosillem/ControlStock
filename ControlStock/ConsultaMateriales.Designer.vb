@@ -27,12 +27,15 @@ Partial Class ConsultaMateriales
         TextBox1 = New TextBox()
         Label1 = New Label()
         DataGridView1 = New DataGridView()
+        Button4 = New Button()
+        TextBox2 = New TextBox()
+        Label2 = New Label()
         CType(DataGridView1, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
         ' 
         ' Button2
         ' 
-        Button2.Location = New Point(300, 5)
+        Button2.Location = New Point(588, 5)
         Button2.Name = "Button2"
         Button2.Size = New Size(77, 21)
         Button2.TabIndex = 12
@@ -80,11 +83,39 @@ Partial Class ConsultaMateriales
         DataGridView1.Size = New Size(1366, 374)
         DataGridView1.TabIndex = 13
         ' 
+        ' Button4
+        ' 
+        Button4.Location = New Point(536, 5)
+        Button4.Name = "Button4"
+        Button4.Size = New Size(46, 21)
+        Button4.TabIndex = 16
+        Button4.Text = "Filtrar"
+        Button4.UseVisualStyleBackColor = True
+        ' 
+        ' TextBox2
+        ' 
+        TextBox2.Location = New Point(430, 6)
+        TextBox2.Name = "TextBox2"
+        TextBox2.Size = New Size(100, 22)
+        TextBox2.TabIndex = 15
+        ' 
+        ' Label2
+        ' 
+        Label2.AutoSize = True
+        Label2.Location = New Point(300, 9)
+        Label2.Name = "Label2"
+        Label2.Size = New Size(122, 14)
+        Label2.TabIndex = 14
+        Label2.Text = "Filtrar por descripción"
+        ' 
         ' ConsultaMateriales
         ' 
         AutoScaleDimensions = New SizeF(7F, 14F)
         AutoScaleMode = AutoScaleMode.Font
         ClientSize = New Size(1390, 420)
+        Controls.Add(Button4)
+        Controls.Add(TextBox2)
+        Controls.Add(Label2)
         Controls.Add(DataGridView1)
         Controls.Add(Button2)
         Controls.Add(Button1)
@@ -107,4 +138,7 @@ Partial Class ConsultaMateriales
     Friend WithEvents TextBox1 As TextBox
     Friend WithEvents Label1 As Label
     Friend WithEvents DataGridView1 As DataGridView
+    Friend WithEvents Button4 As Button
+    Friend WithEvents TextBox2 As TextBox
+    Friend WithEvents Label2 As Label
 End Class
