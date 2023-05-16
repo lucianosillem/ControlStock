@@ -39,7 +39,7 @@ Public Class ControlStockMenu
         DataGridView1.Columns(0).Name = "Usuario"
         DataGridView1.Columns(1).Name = "Nombre"
         DataGridView1.Columns(2).Name = "Edificio"
-        DataGridView1.Columns(3).Name = "Fecha de inicio de sesión"
+        DataGridView1.Columns(3).Name = "Fecha de inicio"
 
         IDSesion = random.Next(1, 1000)
         Ahora = Now().ToString("yyyy-MM-dd HH:mm:ss")

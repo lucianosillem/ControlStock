@@ -24,6 +24,7 @@ Partial Class ControlStockMenu
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         components = New ComponentModel.Container()
+        Dim DataGridViewCellStyle1 As DataGridViewCellStyle = New DataGridViewCellStyle()
         Dim resources As ComponentModel.ComponentResourceManager = New ComponentModel.ComponentResourceManager(GetType(ControlStockMenu))
         MenuStrip = New MenuStrip()
         InventarioToolStripMenuItem = New ToolStripMenuItem()
@@ -76,26 +77,26 @@ Partial Class ControlStockMenu
         ' AltaToolStripMenuItem
         ' 
         AltaToolStripMenuItem.Name = "AltaToolStripMenuItem"
-        AltaToolStripMenuItem.Size = New Size(180, 22)
+        AltaToolStripMenuItem.Size = New Size(132, 22)
         AltaToolStripMenuItem.Text = "&Alta..."
         ' 
         ' BajaToolStripMenuItem
         ' 
         BajaToolStripMenuItem.Enabled = False
         BajaToolStripMenuItem.Name = "BajaToolStripMenuItem"
-        BajaToolStripMenuItem.Size = New Size(180, 22)
+        BajaToolStripMenuItem.Size = New Size(132, 22)
         BajaToolStripMenuItem.Text = "&Baja..."
         ' 
         ' VerToolStripMenuItem
         ' 
         VerToolStripMenuItem.Name = "VerToolStripMenuItem"
-        VerToolStripMenuItem.Size = New Size(180, 22)
+        VerToolStripMenuItem.Size = New Size(132, 22)
         VerToolStripMenuItem.Text = "&Consulta..."
         ' 
         ' IngresoToolStripMenuItem
         ' 
         IngresoToolStripMenuItem.Name = "IngresoToolStripMenuItem"
-        IngresoToolStripMenuItem.Size = New Size(180, 22)
+        IngresoToolStripMenuItem.Size = New Size(132, 22)
         IngresoToolStripMenuItem.Text = "&Ingreso..."
         ' 
         ' MenúToolStripMenuItem
@@ -186,29 +187,42 @@ Partial Class ControlStockMenu
         ' Timer1
         ' 
         Timer1.Enabled = True
-        Timer1.Interval = 2000
+        Timer1.Interval = 1000
         ' 
         ' DataGridView1
         ' 
         DataGridView1.AllowUserToAddRows = False
         DataGridView1.AllowUserToDeleteRows = False
+        DataGridView1.AllowUserToResizeColumns = False
+        DataGridView1.AllowUserToResizeRows = False
         DataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells
         DataGridView1.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells
         DataGridView1.BackgroundColor = SystemColors.AppWorkspace
         DataGridView1.BorderStyle = BorderStyle.None
-        DataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        DataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle1.BackColor = SystemColors.Control
+        DataGridViewCellStyle1.Font = New Font("Tahoma", 9F, FontStyle.Regular, GraphicsUnit.Point)
+        DataGridViewCellStyle1.ForeColor = SystemColors.WindowText
+        DataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight
+        DataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText
+        DataGridViewCellStyle1.WrapMode = DataGridViewTriState.True
+        DataGridView1.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
+        DataGridView1.ColumnHeadersHeight = 30
+        DataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing
         DataGridView1.Enabled = False
         DataGridView1.Location = New Point(12, 42)
         DataGridView1.Name = "DataGridView1"
         DataGridView1.ReadOnly = True
         DataGridView1.RowHeadersVisible = False
         DataGridView1.RowTemplate.Height = 25
+        DataGridView1.ScrollBars = ScrollBars.Vertical
         DataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect
         DataGridView1.Size = New Size(457, 150)
         DataGridView1.TabIndex = 7
         ' 
         ' StatusStrip1
         ' 
+        StatusStrip1.Font = New Font("Tahoma", 9F, FontStyle.Regular, GraphicsUnit.Point)
         StatusStrip1.Items.AddRange(New ToolStripItem() {ToolStripStatusLabel1})
         StatusStrip1.Location = New Point(0, 466)
         StatusStrip1.Name = "StatusStrip1"
@@ -219,8 +233,8 @@ Partial Class ControlStockMenu
         ' ToolStripStatusLabel1
         ' 
         ToolStripStatusLabel1.Name = "ToolStripStatusLabel1"
-        ToolStripStatusLabel1.Size = New Size(119, 17)
-        ToolStripStatusLabel1.Text = "ToolStripStatusLabel1"
+        ToolStripStatusLabel1.Size = New Size(11, 17)
+        ToolStripStatusLabel1.Text = "-"
         ' 
         ' OpenFileDialog1
         ' 
