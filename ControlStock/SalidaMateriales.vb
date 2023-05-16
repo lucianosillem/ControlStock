@@ -1,6 +1,4 @@
-﻿Imports DocumentFormat.OpenXml.Packaging
-
-Public Class SalidaMateriales
+﻿Public Class SalidaMateriales
     Private myConn, TmpConn As SqlConnection
     Private myCmd, TmpCmd As SqlCommand
     Private myReader, TmpReader As SqlDataReader

@@ -1,7 +1,5 @@
 ﻿
 Imports System.IO
-Imports DocumentFormat.OpenXml.Packaging
-Imports DocumentFormat.OpenXml.Spreadsheet
 Imports OfficeOpenXml
 
 Public Class ControlStockMenu

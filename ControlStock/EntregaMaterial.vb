@@ -1,7 +1,4 @@
-﻿Imports System.Threading
-Imports System.Windows
-
-Public Class EntregaMaterial
+﻿Public Class EntregaMaterial
     Private myConn As SqlConnection
     Private myCmd As SqlCommand
     Private myReader As SqlDataReader
