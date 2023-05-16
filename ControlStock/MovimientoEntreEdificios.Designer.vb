@@ -44,6 +44,7 @@ Partial Class MovimientoEntreEdificios
         BtnGuardar = New Button()
         Label7 = New Label()
         txtStock = New TextBox()
+        chkFaja = New CheckBox()
         CType(DataGridView1, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
         ' 
@@ -242,11 +243,22 @@ Partial Class MovimientoEntreEdificios
         txtStock.Size = New Size(40, 22)
         txtStock.TabIndex = 38
         ' 
+        ' chkFaja
+        ' 
+        chkFaja.AutoSize = True
+        chkFaja.Location = New Point(292, 210)
+        chkFaja.Name = "chkFaja"
+        chkFaja.Size = New Size(65, 18)
+        chkFaja.TabIndex = 40
+        chkFaja.Text = "Sin &faja"
+        chkFaja.UseVisualStyleBackColor = True
+        ' 
         ' MovimientoEntreEdificios
         ' 
         AutoScaleDimensions = New SizeF(7F, 14F)
         AutoScaleMode = AutoScaleMode.Font
         ClientSize = New Size(1169, 280)
+        Controls.Add(chkFaja)
         Controls.Add(Label7)
         Controls.Add(txtStock)
         Controls.Add(BtnGuardar)
@@ -301,4 +313,5 @@ Partial Class MovimientoEntreEdificios
     Friend WithEvents BtnGuardar As Button
     Friend WithEvents Label7 As Label
     Friend WithEvents txtStock As TextBox
+    Friend WithEvents chkFaja As CheckBox
 End Class

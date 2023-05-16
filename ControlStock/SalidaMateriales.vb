@@ -1,4 +1,6 @@
-﻿Public Class SalidaMateriales
+﻿Imports DocumentFormat.OpenXml.Packaging
+
+Public Class SalidaMateriales
     Private myConn, TmpConn As SqlConnection
     Private myCmd, TmpCmd As SqlCommand
     Private myReader, TmpReader As SqlDataReader
@@ -203,7 +205,7 @@
                             NrosDeSerie = txtSerie.Text
                         End If
 
-                        If CantCajas > 1 Then
+                        If CantCajas > 1 And chkFaja.Checked = False Then
                             For i = 1 To CantCajas
                                 Faja &= InputBox("Faja " & i & " de " & CantCajas, "Salida de Materiales")
                                 If i < Cantidad Then
@@ -214,7 +216,7 @@
                             Faja = txtFaja.Text
                         End If
 
-                        If CantCajas > 1 Then
+                        If CantCajas > 1 And chkOblea.Checked = False Then
                             For i = 1 To CantCajas
                                 Oblea &= InputBox("Oblea " & i & " de " & CantCajas, "Salida de Materiales")
                                 If i < Cantidad Then
@@ -394,10 +396,14 @@
             If txtCajas.Text <> "" Then
                 CantCajas = Int(txtCajas.Text)
                 If CantCajas > 1 Then
-                    txtFaja.ReadOnly = True
-                    txtFaja.Text = "Presionar Agregar para introducir números de de faja"
-                    txtOblea.ReadOnly = True
-                    txtOblea.Text = "Presionar Agregar para introducir números de oblea"
+                    If chkFaja.Checked = False Then
+                        txtFaja.ReadOnly = True
+                        txtFaja.Text = "Presionar Agregar para introducir números de de faja"
+                    End If
+                    If chkOblea.Checked = False Then
+                        txtOblea.ReadOnly = True
+                        txtOblea.Text = "Presionar Agregar para introducir números de oblea"
+                    End If
                 Else
                     txtFaja.ReadOnly = False
                     txtFaja.Text = ""
@@ -408,5 +414,23 @@
         Catch ex As Exception
             MsgBox(ex.Message, vbExclamation)
         End Try
+    End Sub
+
+    Private Sub chkFaja_CheckedChanged(sender As Object, e As EventArgs) Handles chkFaja.CheckedChanged
+        If chkFaja.Checked Then
+            txtFaja.ReadOnly = True
+            txtFaja.Text = "-"
+        Else
+            txtFaja.ReadOnly = False
+        End If
+    End Sub
+
+    Private Sub chkOblea_CheckedChanged(sender As Object, e As EventArgs) Handles chkOblea.CheckedChanged
+        If chkOblea.Checked Then
+            txtOblea.ReadOnly = True
+            txtOblea.Text = "-"
+        Else
+            txtOblea.ReadOnly = False
+        End If
     End Sub
 End Class

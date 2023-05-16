@@ -7,7 +7,7 @@ Public Class MovimientoEntreEdificios
     Private results As String
     Dim User, EdificioOrigen, EdificioDestino, ColumnaOrigen, ColumnaDestino, NrosDeSerie, CodSAP As String
     Dim Hoy As Date
-    Dim Seriado, Cantidad As Integer
+    Dim Seriado, Cantidad, CantCajas As Integer
     Dim dataObj As New DataObject
     Private Sub MovimientoEntreEdificios_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         DataGridView1.ColumnCount = 11
@@ -128,7 +128,7 @@ Public Class MovimientoEntreEdificios
     Private Sub ComboMarcaModelo_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboMarcaModelo.SelectedIndexChanged
         myConn = New SqlConnection("Data Source=CORPBA-SQL;Initial Catalog=Stock;Integrated Security=True")
         myCmd = myConn.CreateCommand
-        myCmd.CommandText = "Select * from Materiales where MarcaModelo = '" & ComboMarcaModelo.Text & "'"
+        myCmd.CommandText = "Select * from Materiales where DescripcionMaterial = '" & ComboDescripcion.Text & "' and MarcaModelo = '" & ComboMarcaModelo.Text & "'"
         myConn.Open()
         myReader = myCmd.ExecuteReader()
         myReader.Read()
@@ -239,5 +239,33 @@ Public Class MovimientoEntreEdificios
         Clipboard.SetDataObject(dataObj)
         MsgBox("Datos guardados. Tabla copiada al portapapeles.", vbOKOnly + vbInformation, "Control de stock")
         Me.Close()
+    End Sub
+
+    Private Sub ChkFaja_CheckedChanged(sender As Object, e As EventArgs) Handles chkFaja.CheckedChanged
+        If chkFaja.Checked Then
+            txtFaja.ReadOnly = True
+            txtFaja.Text = "-"
+        Else
+            txtFaja.ReadOnly = False
+        End If
+    End Sub
+
+    Private Sub TxtCajas_TextChanged(sender As Object, e As EventArgs) Handles txtCajas.TextChanged
+        Try
+            If txtCajas.Text <> "" Then
+                CantCajas = Int(txtCajas.Text)
+                If CantCajas > 1 Then
+                    If chkFaja.Checked = False Then
+                        txtFaja.ReadOnly = True
+                        txtFaja.Text = "Presionar Agregar para introducir números de de faja"
+                    End If
+                Else
+                    txtFaja.ReadOnly = False
+                    txtFaja.Text = ""
+                End If
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message, vbExclamation)
+        End Try
     End Sub
 End Class
