@@ -133,6 +133,7 @@ Public Class EntregaMaterial
 
             'Dim Remitente As String = UsrRemitente
             Dim Fecha As Date = Hoy
+            Dim Fecha2 As String = Fecha.Year & "-" & Fecha.Month & "-" & Fecha.Day
             'EdifOrigen
             Dim TipoEntrega As String = "Entrega"
             'CodigoSAP
@@ -149,7 +150,7 @@ Public Class EntregaMaterial
             myConn = New SqlConnection("Data Source=CORPBA-SQL;Initial Catalog=Stock;Integrated Security=True")
             myConn.Open()
             myCmd = myConn.CreateCommand
-            myCmd.CommandText = "insert into SalidaMateriales values('" & Remitente & "', '" & Fecha & "', '" & EdificioOrigen & "', '" & TipoEntrega & "', '" & CodigoSAP & "', '" & DescripcionMaterial & "', '" & MarcaModelo & "', " & Cantidad & ", '" & NroSerie & "', '" & Ticket & "', '" & UsuarioDestinatario & "', '" & EdificioDestino & "', '" & NroFaja & "', '" & NroOblea & "')"
+            myCmd.CommandText = "insert into SalidaMateriales values('" & Remitente & "', '" & Fecha2 & "', '" & EdificioOrigen & "', '" & TipoEntrega & "', '" & CodigoSAP & "', '" & DescripcionMaterial & "', '" & MarcaModelo & "', " & Cantidad & ", '" & NroSerie & "', '" & Ticket & "', '" & UsuarioDestinatario & "', '" & EdificioDestino & "', '" & NroFaja & "', '" & NroOblea & "')"
             myCmd.ExecuteNonQuery()
             myConn.Close()
 

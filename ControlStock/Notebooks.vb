@@ -16,7 +16,6 @@
         ComboModeloAnterior.Items.Add("Latitude 5490")
         ComboModeloAnterior.Items.Add("Latitude 5410")
         ComboModeloAnterior.Items.Add("Latitude 5420")
-
     End Sub
 
     Private Sub ComboTipo_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboTipo.SelectedIndexChanged
@@ -35,7 +34,7 @@
             ComboModeloAnterior.Text = ""
             ComboModeloAnterior.Enabled = True
             txtSerieAnterior.Text = ""
-            txtSerieAnterior.Text = True
+            txtSerieAnterior.Enabled = True
         End If
     End Sub
 
