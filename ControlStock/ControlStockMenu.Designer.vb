@@ -47,7 +47,6 @@ Partial Class ControlStockMenu
         ToolTip = New ToolTip(components)
         Timer1 = New Timer(components)
         DataGridView1 = New DataGridView()
-        Label1 = New Label()
         StatusStrip1 = New StatusStrip()
         ToolStripStatusLabel1 = New ToolStripStatusLabel()
         OpenFileDialog1 = New OpenFileDialog()
@@ -208,19 +207,6 @@ Partial Class ControlStockMenu
         DataGridView1.Size = New Size(457, 150)
         DataGridView1.TabIndex = 7
         ' 
-        ' Label1
-        ' 
-        Label1.Anchor = AnchorStyles.Left Or AnchorStyles.Right
-        Label1.BackColor = SystemColors.AppWorkspace
-        Label1.Font = New Font("Tahoma", 20.25F, FontStyle.Regular, GraphicsUnit.Point)
-        Label1.Location = New Point(12, 195)
-        Label1.Name = "Label1"
-        Label1.Size = New Size(258, 39)
-        Label1.TabIndex = 9
-        Label1.Text = "Work in progress"
-        Label1.TextAlign = ContentAlignment.MiddleCenter
-        Label1.Visible = False
-        ' 
         ' StatusStrip1
         ' 
         StatusStrip1.Items.AddRange(New ToolStripItem() {ToolStripStatusLabel1})
@@ -246,7 +232,6 @@ Partial Class ControlStockMenu
         AutoScaleMode = AutoScaleMode.Font
         ClientSize = New Size(737, 488)
         Controls.Add(StatusStrip1)
-        Controls.Add(Label1)
         Controls.Add(MenuStrip)
         Controls.Add(DataGridView1)
         Font = New Font("Tahoma", 9F, FontStyle.Regular, GraphicsUnit.Point)
@@ -282,7 +267,6 @@ Partial Class ControlStockMenu
     Friend WithEvents Timer1 As Timer
     Friend WithEvents DataGridView1 As DataGridView
     Friend WithEvents IngresoToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents Label1 As Label
     Friend WithEvents CompletarSLMovimientoExistenteToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ImprimirEtiquetaDeEnvíoToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents DestinoCACsToolStripMenuItem As ToolStripMenuItem

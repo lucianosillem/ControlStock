@@ -61,6 +61,8 @@ Partial Class SalidaMateriales
         BtnGuardar = New Button()
         Timer1 = New Timer(components)
         lblEdifOrigen = New Label()
+        chkFaja = New CheckBox()
+        chkOblea = New CheckBox()
         CType(DataGridView1, ComponentModel.ISupportInitialize).BeginInit()
         CType(BindingSource1, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
@@ -403,11 +405,33 @@ Partial Class SalidaMateriales
         lblEdifOrigen.Text = "-"
         lblEdifOrigen.TextAlign = ContentAlignment.MiddleLeft
         ' 
+        ' chkFaja
+        ' 
+        chkFaja.AutoSize = True
+        chkFaja.Location = New Point(344, 308)
+        chkFaja.Name = "chkFaja"
+        chkFaja.Size = New Size(65, 18)
+        chkFaja.TabIndex = 39
+        chkFaja.Text = "Sin &faja"
+        chkFaja.UseVisualStyleBackColor = True
+        ' 
+        ' chkOblea
+        ' 
+        chkOblea.AutoSize = True
+        chkOblea.Location = New Point(344, 335)
+        chkOblea.Name = "chkOblea"
+        chkOblea.Size = New Size(75, 18)
+        chkOblea.TabIndex = 40
+        chkOblea.Text = "Sin &oblea"
+        chkOblea.UseVisualStyleBackColor = True
+        ' 
         ' SalidaMateriales
         ' 
         AutoScaleDimensions = New SizeF(7F, 14F)
         AutoScaleMode = AutoScaleMode.Font
         ClientSize = New Size(1265, 441)
+        Controls.Add(chkOblea)
+        Controls.Add(chkFaja)
         Controls.Add(lblEdifOrigen)
         Controls.Add(BtnGuardar)
         Controls.Add(Label16)
@@ -496,4 +520,6 @@ Partial Class SalidaMateriales
     Friend WithEvents BtnGuardar As Button
     Friend WithEvents Timer1 As Timer
     Friend WithEvents lblEdifOrigen As Label
+    Friend WithEvents chkFaja As CheckBox
+    Friend WithEvents chkOblea As CheckBox
 End Class

@@ -76,9 +76,6 @@ Public Class ControlStockMenu
             DataGridView1.Rows.Add(FilaSesiones)
         Loop
         myConn.Close()
-        Label1.Visible = True
-        Label1.Left = (Label1.Parent.Width \ 2) - (Label1.Width \ 2)
-        Label1.Top = Label1.Parent.Height - Label1.Height - 60
     End Sub
 
     Private Sub IngresoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles IngresoToolStripMenuItem.Click
@@ -116,7 +113,7 @@ Public Class ControlStockMenu
         If msgImport = vbYes Then
             If OpenFileDialog1.ShowDialog() = DialogResult.OK Then
                 Dim filePath As String = OpenFileDialog1.FileName
-
+                FilasInsertadas = 0
                 Using package As New ExcelPackage(New FileInfo(filePath))
                     Dim worksheet As ExcelWorksheet = package.Workbook.Worksheets(1)
                     Dim range As ExcelRange = worksheet.Dimension
