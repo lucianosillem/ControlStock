@@ -291,16 +291,12 @@
             '.Columns(16).Name = "Valor declarado $"
 
             If DescripcionMaterial = "Notebook" Then
-                Dim frmNotebooks As New Notebooks() With {.MdiParent = ControlStockMenu}
-                frmNotebooks.Show()
+                Dim frmNotebooks As New Notebooks()
+                frmNotebooks.ShowDialog()
                 frmNotebooks.txtSerieNuevo.Text = NroSerie
                 frmNotebooks.txtModeloNuevo.Text = MarcaModelo
                 frmNotebooks.txtLegajo.Text = UsuarioDestinatario
                 frmNotebooks.txtApellidoNombre.Text = row.Cells(9).Value.ToString()
-                Application.DoEvents()
-                While Not frmNotebooks.IsDisposed
-                    Application.DoEvents()
-                End While
             End If
 
             myConn = New SqlConnection("Data Source=CORPBA-SQL;Initial Catalog=Stock;Integrated Security=True")

@@ -170,14 +170,14 @@ Partial Class SalidaMateriales
         ' 
         txtFaja.Location = New Point(152, 306)
         txtFaja.Name = "txtFaja"
-        txtFaja.Size = New Size(186, 22)
+        txtFaja.Size = New Size(141, 22)
         txtFaja.TabIndex = 13
         ' 
         ' txtOblea
         ' 
         txtOblea.Location = New Point(152, 333)
         txtOblea.Name = "txtOblea"
-        txtOblea.Size = New Size(186, 22)
+        txtOblea.Size = New Size(141, 22)
         txtOblea.TabIndex = 14
         ' 
         ' Label1
@@ -329,19 +329,19 @@ Partial Class SalidaMateriales
         DataGridView1.ClipboardCopyMode = DataGridViewClipboardCopyMode.EnableAlwaysIncludeHeaderText
         DataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
         DataGridView1.GridColor = Color.DarkRed
-        DataGridView1.Location = New Point(505, 8)
+        DataGridView1.Location = New Point(484, 8)
         DataGridView1.Name = "DataGridView1"
         DataGridView1.ReadOnly = True
         DataGridView1.RowHeadersVisible = False
         DataGridView1.RowTemplate.Height = 25
         DataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect
         DataGridView1.ShowEditingIcon = False
-        DataGridView1.Size = New Size(748, 375)
+        DataGridView1.Size = New Size(769, 375)
         DataGridView1.TabIndex = 29
         ' 
         ' btnAgregar
         ' 
-        btnAgregar.Location = New Point(152, 398)
+        btnAgregar.Location = New Point(179, 398)
         btnAgregar.Name = "btnAgregar"
         btnAgregar.Size = New Size(75, 31)
         btnAgregar.TabIndex = 30
@@ -384,7 +384,7 @@ Partial Class SalidaMateriales
         ' 
         ' BtnGuardar
         ' 
-        BtnGuardar.Location = New Point(781, 398)
+        BtnGuardar.Location = New Point(770, 398)
         BtnGuardar.Name = "BtnGuardar"
         BtnGuardar.Size = New Size(196, 31)
         BtnGuardar.TabIndex = 36
@@ -408,7 +408,7 @@ Partial Class SalidaMateriales
         ' chkFaja
         ' 
         chkFaja.AutoSize = True
-        chkFaja.Location = New Point(344, 308)
+        chkFaja.Location = New Point(299, 308)
         chkFaja.Name = "chkFaja"
         chkFaja.Size = New Size(65, 18)
         chkFaja.TabIndex = 39
@@ -418,7 +418,7 @@ Partial Class SalidaMateriales
         ' chkOblea
         ' 
         chkOblea.AutoSize = True
-        chkOblea.Location = New Point(344, 335)
+        chkOblea.Location = New Point(299, 335)
         chkOblea.Name = "chkOblea"
         chkOblea.Size = New Size(75, 18)
         chkOblea.TabIndex = 40

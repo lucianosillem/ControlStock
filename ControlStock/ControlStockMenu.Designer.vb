@@ -33,7 +33,7 @@ Partial Class ControlStockMenu
         VerToolStripMenuItem = New ToolStripMenuItem()
         IngresoToolStripMenuItem = New ToolStripMenuItem()
         MenúToolStripMenuItem = New ToolStripMenuItem()
-        EnvíoPorCorreoArgentinoToolStripMenuItem = New ToolStripMenuItem()
+        SalidaDeMaterialesToolStripMenuItem = New ToolStripMenuItem()
         VerInventarioToolStripMenuItem = New ToolStripMenuItem()
         EntregaDeMaterialAUsuarioToolStripMenuItem = New ToolStripMenuItem()
         VerÚltimosMovimientosToolStripMenuItem = New ToolStripMenuItem()
@@ -51,6 +51,9 @@ Partial Class ControlStockMenu
         StatusStrip1 = New StatusStrip()
         ToolStripStatusLabel1 = New ToolStripStatusLabel()
         OpenFileDialog1 = New OpenFileDialog()
+        PrintDocument1 = New Printing.PrintDocument()
+        PrintPreviewDialog1 = New PrintPreviewDialog()
+        PrintDialog1 = New PrintDialog()
         MenuStrip.SuspendLayout()
         CType(DataGridView1, ComponentModel.ISupportInitialize).BeginInit()
         StatusStrip1.SuspendLayout()
@@ -101,16 +104,16 @@ Partial Class ControlStockMenu
         ' 
         ' MenúToolStripMenuItem
         ' 
-        MenúToolStripMenuItem.DropDownItems.AddRange(New ToolStripItem() {EnvíoPorCorreoArgentinoToolStripMenuItem, VerInventarioToolStripMenuItem, EntregaDeMaterialAUsuarioToolStripMenuItem, VerÚltimosMovimientosToolStripMenuItem, CompletarSLMovimientoExistenteToolStripMenuItem})
+        MenúToolStripMenuItem.DropDownItems.AddRange(New ToolStripItem() {SalidaDeMaterialesToolStripMenuItem, VerInventarioToolStripMenuItem, EntregaDeMaterialAUsuarioToolStripMenuItem, VerÚltimosMovimientosToolStripMenuItem, CompletarSLMovimientoExistenteToolStripMenuItem})
         MenúToolStripMenuItem.Name = "MenúToolStripMenuItem"
         MenúToolStripMenuItem.Size = New Size(86, 20)
         MenúToolStripMenuItem.Text = "&Movimientos"
         ' 
-        ' EnvíoPorCorreoArgentinoToolStripMenuItem
+        ' SalidaDeMaterialesToolStripMenuItem
         ' 
-        EnvíoPorCorreoArgentinoToolStripMenuItem.Name = "EnvíoPorCorreoArgentinoToolStripMenuItem"
-        EnvíoPorCorreoArgentinoToolStripMenuItem.Size = New Size(280, 22)
-        EnvíoPorCorreoArgentinoToolStripMenuItem.Text = "&Salida de materiales..."
+        SalidaDeMaterialesToolStripMenuItem.Name = "SalidaDeMaterialesToolStripMenuItem"
+        SalidaDeMaterialesToolStripMenuItem.Size = New Size(280, 22)
+        SalidaDeMaterialesToolStripMenuItem.Text = "&Salida de materiales..."
         ' 
         ' VerInventarioToolStripMenuItem
         ' 
@@ -165,21 +168,18 @@ Partial Class ControlStockMenu
         ' 
         ' DestinoCACsToolStripMenuItem
         ' 
-        DestinoCACsToolStripMenuItem.Enabled = False
         DestinoCACsToolStripMenuItem.Name = "DestinoCACsToolStripMenuItem"
         DestinoCACsToolStripMenuItem.Size = New Size(233, 22)
         DestinoCACsToolStripMenuItem.Text = "Destino &CACs..."
         ' 
         ' DestinoEdificioCorporativoToolStripMenuItem
         ' 
-        DestinoEdificioCorporativoToolStripMenuItem.Enabled = False
         DestinoEdificioCorporativoToolStripMenuItem.Name = "DestinoEdificioCorporativoToolStripMenuItem"
         DestinoEdificioCorporativoToolStripMenuItem.Size = New Size(233, 22)
         DestinoEdificioCorporativoToolStripMenuItem.Text = "Destino &Edificio corporativo..."
         ' 
         ' DestinoDomicilioParticularToolStripMenuItem
         ' 
-        DestinoDomicilioParticularToolStripMenuItem.Enabled = False
         DestinoDomicilioParticularToolStripMenuItem.Name = "DestinoDomicilioParticularToolStripMenuItem"
         DestinoDomicilioParticularToolStripMenuItem.Size = New Size(233, 22)
         DestinoDomicilioParticularToolStripMenuItem.Text = "Destino &Domicilio particular..."
@@ -240,6 +240,23 @@ Partial Class ControlStockMenu
         ' 
         OpenFileDialog1.FileName = "OpenFileDialog1"
         ' 
+        ' PrintDocument1
+        ' 
+        ' 
+        ' PrintPreviewDialog1
+        ' 
+        PrintPreviewDialog1.AutoScrollMargin = New Size(0, 0)
+        PrintPreviewDialog1.AutoScrollMinSize = New Size(0, 0)
+        PrintPreviewDialog1.ClientSize = New Size(400, 300)
+        PrintPreviewDialog1.Enabled = True
+        PrintPreviewDialog1.Icon = CType(resources.GetObject("PrintPreviewDialog1.Icon"), Icon)
+        PrintPreviewDialog1.Name = "PrintPreviewDialog1"
+        PrintPreviewDialog1.Visible = False
+        ' 
+        ' PrintDialog1
+        ' 
+        PrintDialog1.UseEXDialog = True
+        ' 
         ' ControlStockMenu
         ' 
         AutoScaleDimensions = New SizeF(7F, 14F)
@@ -273,7 +290,7 @@ Partial Class ControlStockMenu
     Friend WithEvents MenúToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents VerInventarioToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents VerToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents EnvíoPorCorreoArgentinoToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents SalidaDeMaterialesToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents EntregaDeMaterialAUsuarioToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents VerÚltimosMovimientosToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents NóminaToolStripMenuItem As ToolStripMenuItem
@@ -290,4 +307,7 @@ Partial Class ControlStockMenu
     Friend WithEvents ToolStripStatusLabel1 As ToolStripStatusLabel
     Friend WithEvents ActualizarNóminaToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents OpenFileDialog1 As OpenFileDialog
+    Friend WithEvents PrintDocument1 As Printing.PrintDocument
+    Friend WithEvents PrintPreviewDialog1 As PrintPreviewDialog
+    Friend WithEvents PrintDialog1 As PrintDialog
 End Class
