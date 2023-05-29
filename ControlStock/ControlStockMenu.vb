@@ -1,4 +1,6 @@
 ﻿Imports System.IO
+Imports DocumentFormat.OpenXml.Office2010.Excel
+Imports DocumentFormat.OpenXml.Office2010.ExcelAc
 Imports OfficeOpenXml
 
 Public Class ControlStockMenu
@@ -12,6 +14,7 @@ Public Class ControlStockMenu
     Dim Compilation As String
     Public RemitoTabla, RemitoRemitente, RemitoDestinatario, RemitoDireccion, RemitoLocalidad, RemitoProvincia, RemitoCP, RemitoNro As String
     Public CurPage, NroCaja As Integer
+    Public UsrRemitente As String
     Private Sub SalidaDeMaterialesToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SalidaDeMaterialesToolStripMenuItem.Click
         Dim frmSalidaMateriales As New SalidaMateriales With {.MdiParent = Me}
         frmSalidaMateriales.Show()
@@ -41,7 +44,7 @@ Public Class ControlStockMenu
 
         IDSesion = random.Next(1, 1000)
         Ahora = Now().ToString("yyyy-MM-dd HH:mm:ss")
-        SQLValues = "'" & UCase(System.Environment.UserName) & "','" & Ahora & "'," & IDSesion
+        SQLValues = "'" & UCase(Environment.UserName) & "','" & Ahora & "'," & IDSesion
 
         myConn = New SqlConnection("Data Source=CORPBA-SQL;Initial Catalog=Stock;Integrated Security=True")
         myConn.Open()
@@ -49,6 +52,16 @@ Public Class ControlStockMenu
         myCmd.CommandText = "insert into Sesiones values(" & SQLValues & ")"
         myCmd.ExecuteNonQuery()
         myConn.Close()
+
+        myConn = New SqlConnection("Data Source=CORPBA-SQL;Initial Catalog=Relevamiento;Integrated Security=True")
+        myCmd = myConn.CreateCommand
+        myCmd.CommandText = "select * from Usuarios where NUsuario = '" & UCase(Environment.UserName) & "'"
+        myConn.Open()
+        myReader = myCmd.ExecuteReader
+        myReader.Read()
+        UsrRemitente = myReader.GetValue(1)
+        myConn.Close()
+
         Compilation = "Última compilación: " & IO.File.GetLastWriteTime(Application.ExecutablePath).ToShortDateString & " " & IO.File.GetLastWriteTime(Application.ExecutablePath).ToShortTimeString
         ToolStripStatusLabel1.Text = Compilation
 

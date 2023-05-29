@@ -37,7 +37,6 @@ Partial Class ControlStockMenu
         VerInventarioToolStripMenuItem = New ToolStripMenuItem()
         EntregaDeMaterialAUsuarioToolStripMenuItem = New ToolStripMenuItem()
         VerÚltimosMovimientosToolStripMenuItem = New ToolStripMenuItem()
-        CompletarSLMovimientoExistenteToolStripMenuItem = New ToolStripMenuItem()
         NóminaToolStripMenuItem = New ToolStripMenuItem()
         ActualizarNóminaToolStripMenuItem = New ToolStripMenuItem()
         VerToolStripMenuItem1 = New ToolStripMenuItem()
@@ -104,7 +103,7 @@ Partial Class ControlStockMenu
         ' 
         ' MenúToolStripMenuItem
         ' 
-        MenúToolStripMenuItem.DropDownItems.AddRange(New ToolStripItem() {SalidaDeMaterialesToolStripMenuItem, VerInventarioToolStripMenuItem, EntregaDeMaterialAUsuarioToolStripMenuItem, VerÚltimosMovimientosToolStripMenuItem, CompletarSLMovimientoExistenteToolStripMenuItem})
+        MenúToolStripMenuItem.DropDownItems.AddRange(New ToolStripItem() {SalidaDeMaterialesToolStripMenuItem, VerInventarioToolStripMenuItem, EntregaDeMaterialAUsuarioToolStripMenuItem, VerÚltimosMovimientosToolStripMenuItem})
         MenúToolStripMenuItem.Name = "MenúToolStripMenuItem"
         MenúToolStripMenuItem.Size = New Size(86, 20)
         MenúToolStripMenuItem.Text = "&Movimientos"
@@ -112,33 +111,26 @@ Partial Class ControlStockMenu
         ' SalidaDeMaterialesToolStripMenuItem
         ' 
         SalidaDeMaterialesToolStripMenuItem.Name = "SalidaDeMaterialesToolStripMenuItem"
-        SalidaDeMaterialesToolStripMenuItem.Size = New Size(280, 22)
+        SalidaDeMaterialesToolStripMenuItem.Size = New Size(236, 22)
         SalidaDeMaterialesToolStripMenuItem.Text = "&Salida de materiales..."
         ' 
         ' VerInventarioToolStripMenuItem
         ' 
         VerInventarioToolStripMenuItem.Name = "VerInventarioToolStripMenuItem"
-        VerInventarioToolStripMenuItem.Size = New Size(280, 22)
+        VerInventarioToolStripMenuItem.Size = New Size(236, 22)
         VerInventarioToolStripMenuItem.Text = "&Movimiento entre edificios..."
         ' 
         ' EntregaDeMaterialAUsuarioToolStripMenuItem
         ' 
         EntregaDeMaterialAUsuarioToolStripMenuItem.Name = "EntregaDeMaterialAUsuarioToolStripMenuItem"
-        EntregaDeMaterialAUsuarioToolStripMenuItem.Size = New Size(280, 22)
+        EntregaDeMaterialAUsuarioToolStripMenuItem.Size = New Size(236, 22)
         EntregaDeMaterialAUsuarioToolStripMenuItem.Text = "E&ntrega de material en sitio..."
         ' 
         ' VerÚltimosMovimientosToolStripMenuItem
         ' 
         VerÚltimosMovimientosToolStripMenuItem.Name = "VerÚltimosMovimientosToolStripMenuItem"
-        VerÚltimosMovimientosToolStripMenuItem.Size = New Size(280, 22)
+        VerÚltimosMovimientosToolStripMenuItem.Size = New Size(236, 22)
         VerÚltimosMovimientosToolStripMenuItem.Text = "&Ver últimos movimientos..."
-        ' 
-        ' CompletarSLMovimientoExistenteToolStripMenuItem
-        ' 
-        CompletarSLMovimientoExistenteToolStripMenuItem.Enabled = False
-        CompletarSLMovimientoExistenteToolStripMenuItem.Name = "CompletarSLMovimientoExistenteToolStripMenuItem"
-        CompletarSLMovimientoExistenteToolStripMenuItem.Size = New Size(280, 22)
-        CompletarSLMovimientoExistenteToolStripMenuItem.Text = "&Completar SL movimiento existente..."
         ' 
         ' NóminaToolStripMenuItem
         ' 
@@ -282,8 +274,8 @@ Partial Class ControlStockMenu
         ResumeLayout(False)
         PerformLayout()
     End Sub
-    Friend WithEvents ToolTip As System.Windows.Forms.ToolTip
-    Friend WithEvents MenuStrip As System.Windows.Forms.MenuStrip
+    Friend WithEvents ToolTip As ToolTip
+    Friend WithEvents MenuStrip As MenuStrip
     Friend WithEvents InventarioToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents AltaToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents BajaToolStripMenuItem As ToolStripMenuItem
@@ -298,7 +290,6 @@ Partial Class ControlStockMenu
     Friend WithEvents Timer1 As Timer
     Friend WithEvents DataGridView1 As DataGridView
     Friend WithEvents IngresoToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents CompletarSLMovimientoExistenteToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ImprimirEtiquetaDeEnvíoToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents DestinoCACsToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents DestinoEdificioCorporativoToolStripMenuItem As ToolStripMenuItem
